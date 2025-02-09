@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgentFlow - AI-Powered Business Solutions</title>
+    <meta name="description" content="Transform your business with AgentFlow's AI solutions" />
+    <meta name="author" content="AgentFlow" />
+    <meta property="og:image" content="/og-image.png" />
+    <style>
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  color: #FFFFFF;
+  background-color: #1A1F2C;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(26, 31, 44, 0.9);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #9b87f5;
+}
+
+.nav-links a {
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-left: 2rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #9b87f5;
+}
+
+/* Hero section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1A1F2C 0%, #2A2F3C 100%);
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #9b87f5, #D6BCFA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #D6BCFA;
+}
+
+.cta-button {
+  background: #9b87f5;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #7E69AB;
+}
+
+/* Bottom Buttons Section */
+.workflow-buttons {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: rgba(155, 135, 245, 0.05);
+}
+
+.workflow-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.workflow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+}
+
+.workflow-button {
+  background: rgba(155, 135, 245, 0.2);
+  color: #D6BCFA;
+  border: 2px solid #9b87f5;
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.workflow-button:hover {
+  background: #9b87f5;
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(155, 135, 245, 0.3);
+}
+
+.step-number {
+  font-size: 1.5rem;
+  color: #9b87f5;
+  margin-bottom: 0.5rem;
+}
+
+.step-description {
+  color: #D6BCFA;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Footer */
+footer {
+  background: #151820;
+  padding: 4rem 2rem 2rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section h3 {
+  color: #9b87f5;
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.social-links a:hover {
+  color: #9b87f5;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(155, 135, 245, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+
+  .workflow-step {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 2rem;
+  }
+}
+</style>
+  </head>
+  <body>
+    <header class="hero">
+      <nav>
+        <div class="logo">AgentFlow</div>
+        <div class="nav-links">
+          <a href="add an agent.html">Add an agent</a>
+          <a href="create an agent.html">Create an agent </a>
+          <a href="request an agent.html">Request an agent</a>
+          <a href="agent communication.html">Agent communication</a>
+        </div>
+      </nav>
+      <div class="hero-content">
+        <h1>Workflow Automation</h1>
+        <p>Automate Complex Tasks with AI Teammates</p>
+        <button class="cta-button">Get Started</button>
+      </div>
+    </header>
+
+    <section class="workflow-buttons">
+      <div class="workflow-container">
+        <div class="workflow-step">
+          <div class="step-number">1</div>
+          <a href="type-task.html" class="workflow-button" style="text-decoration: none;">Type the Task</a>
+          <p class="step-description">Define your task requirements and objectives in natural language</p>
+        </div>
+        <div class="workflow-step">
+          <div class="step-number">2</div>
+          <button class="workflow-button">Design the Workflow</button>
+          <p class="step-description">Create and customize your automated workflow process</p>
+        </div>
+        <div class="workflow-step">
+          <div class="step-number">3</div>
+          <button class="workflow-button">Workflow Execution</button>
+          <p class="step-description">Launch and monitor your automated workflow in real-time</p>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: info@agentflow.com</p>
+          <p>Phone: (555) 123-4567</p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="https://x.com/rajesht44">Twitter</a>
+            <a href="https://www.linkedin.com/in/rajeshktrivedi">LinkedIn</a>
+            <a href="#">Facebook</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AgentFlow. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

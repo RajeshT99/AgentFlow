@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Task - AgentFlow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            color: #FFFFFF;
+            background-color: #1A1F2C;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: rgba(26, 31, 44, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #9b87f5;
+            text-decoration: none;
+        }
+
+        .task-container {
+            max-width: 800px;
+            margin: 100px auto 40px;
+            padding: 2rem;
+        }
+
+        .task-form {
+            background: rgba(155, 135, 245, 0.1);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-top: 2rem;
+        }
+
+        h1 {
+            color: #9b87f5;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            color: #D6BCFA;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid rgba(155, 135, 245, 0.3);
+            border-radius: 0.5rem;
+            background: rgba(26, 31, 44, 0.8);
+            color: #FFFFFF;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #9b87f5;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='6'%3E%3Cpath d='M0 0l6 6 6-6z' fill='%239b87f5'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        button {
+            background: #9b87f5;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        button:hover {
+            background: #7E69AB;
+            transform: translateY(-2px);
+        }
+
+        button.secondary {
+            background: transparent;
+            border: 2px solid #9b87f5;
+            color: #9b87f5;
+        }
+
+        button.secondary:hover {
+            background: rgba(155, 135, 245, 0.1);
+        }
+
+        .success-message {
+            display: none;
+            background: rgba(72, 187, 120, 0.1);
+            border: 2px solid #48BB78;
+            color: #48BB78;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .task-container {
+                padding: 1rem;
+                margin-top: 80px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">AgentFlow</a>
+    </nav>
+
+    <div class="task-container">
+        <h1>Type Your Task</h1>
+        <form class="task-form" id="taskForm">
+            <div class="form-group">
+                <label for="taskTitle">Task Title</label>
+                <input type="text" id="taskTitle" name="taskTitle" placeholder="Enter a clear title for your task" required>
+            </div>
+
+            <div class="form-group">
+                <label for="taskDescription">Task Description</label>
+                <textarea id="taskDescription" name="taskDescription" placeholder="Describe your task in detail..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="priority">Priority Level</label>
+                <select id="priority" name="priority" required>
+                    <option value="">Select priority level</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="deadline">Expected Completion Time</label>
+                <select id="deadline" name="deadline" required>
+                    <option value="">Select timeframe</option>
+                    <option value="1hour">Within 1 hour</option>
+                    <option value="4hours">Within 4 hours</option>
+                    <option value="1day">Within 1 day</option>
+                    <option value="1week">Within 1 week</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="secondary" onclick="window.location.href='index.html'">Cancel</button>
+                <button type="submit">Submit Task</button>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                Task submitted successfully! Redirecting to workflow design...
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('taskForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+            
+            // Simulate form submission and redirect
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
